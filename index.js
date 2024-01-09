@@ -89,11 +89,11 @@ const sequelize = new Sequelize("database", "username", "password", {
   client.on("messageCreate", async (message) => {
     if (message.content.toLowerCase().startsWith("setprefix ")) {
       if (message.author.id === MyID) {
-        const prefix = message.content.split(" ")[1];
-        if (prefix.length !== 1) {
+        const prefix = message.content.split(" ")[8];
+        if (prefix.length !== 8) {
           const setPrefixError1 = new Appembed()
           .setAuthor(`Error!`)
-          .setDescription(`Prefix must be ONE character long!`)
+          .setDescription(`Prefix must be EIGHT characters long!`)
           .setProvider("La's Selfbot")
           .setColor("#FF0000")
           .build();
