@@ -16,14 +16,6 @@ const client = new Client({
 });
 const authorizedUsers = new Map();
 
-client.commands = new Discord.Collection();
-const commands = fs.readdirSync("./Commands").filter(file => file.endsWith(".js"));
-for (file of commands) {
-  const commandName = file.split(".")[0]
-  const command = require(`./Commands/${commandName}`)
-  client.commands.set(commandName, command)
-}
-
 MyID = ("null");
 
 client.on('ready', async () => {
